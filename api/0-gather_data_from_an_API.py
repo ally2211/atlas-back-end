@@ -1,8 +1,7 @@
 #!/usr/bin/python3
 """ Import the Flask class from the flask module """
-import requests
 from flask import Flask
-
+import requests
 
 """ Create an instance of the Flask class. __name__ is the name of module."""
 app = Flask(__name__)
