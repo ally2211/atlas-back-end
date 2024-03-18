@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-""" Import the Flask class from the flask module """
+""" 
+Import the Flask class from the flask module
+"""
 import flask
 import requests
 
