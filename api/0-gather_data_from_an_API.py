@@ -1,10 +1,10 @@
 #!/usr/bin/python3
 """ Import the Flask class from the flask module """
-import Flask
+import flask
 import requests
 
 """ Create an instance of the Flask class. __name__ is the name of module."""
-app = Flask(__name__)
+app = flask.Flask(__name__)
 
 """set strict slashes to false"""
 app.url_map.strict_slashes = False
