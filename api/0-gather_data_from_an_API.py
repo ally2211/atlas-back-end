@@ -25,10 +25,8 @@ def users(user_id):
     EMPLOYEE_ID = user_id
     # Filter the users list for the user with the matching username
     user = next((user for user in users if user['id'] == EMPLOYEE_ID), None)
-    
+
     if user:
-    # for user in users:
-    #     if user['id'] == EMPLOYEE_ID:
         EMPLOYEE_NAME = user['name']
         TOTAL_NUMBER_OF_TASKS = 0
         NUMBER_OF_DONE_TASKS = 0
@@ -36,23 +34,22 @@ def users(user_id):
         for task in tasks:
             if task['userId'] == EMPLOYEE_ID:
                 TOTAL_NUMBER_OF_TASKS += 1
-                if task['completed'] == True:
+                if task['completed'] is True:
                     NUMBER_OF_DONE_TASKS += 1
                     TASK_TITLE = task['title']
-                    TASKS_LIST.append('\t ' + TASK_TITLE +'\n')
-        employeetasks = ("Employee " + EMPLOYEE_NAME + " is done with tasks(" + str(NUMBER_OF_DONE_TASKS)
-        + "/" + str(TOTAL_NUMBER_OF_TASKS) + "):\n")
+                    TASKS_LIST.append('\t ' + TASK_TITLE + '\n')
+        employeetasks = ("Employee " + EMPLOYEE_NAME +
+                         " is done with tasks(" + str(NUMBER_OF_DONE_TASKS) +
+                         "/" + str(TOTAL_NUMBER_OF_TASKS) + "):\n")
         for task in TASKS_LIST:
             employeetasks += task
-            
-        #return {'names': names}  # Return the list of names as JSON
-        #return '\n'.join(employeetasks), 200, {'Content-Type': 'text/plain'}
+
         return employeetasks.strip(), 200, {'Content-Type': 'text/plain'}
 
     else:
         return {'message': 'User not found'}, 404
 
-    
+
 # Check if not imported as a module
 if __name__ == '__main__':
     # host='0.0.0.0' makes the server accessible externally.
