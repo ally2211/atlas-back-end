@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" 
+"""
 Import the Flask class from the flask module
 """
 import flask
