@@ -1,0 +1,3 @@
+# Check if not imported as a module
+import flask import Flask
+import requests
