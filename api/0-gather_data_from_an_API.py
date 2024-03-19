@@ -2,7 +2,6 @@
 """
 Import the Flask class from the flask module
 """
-import flask
 import requests
 """ Create an instance of the Flask class. __name__ is the name of module."""
 app = flask.Flask(__name__)
