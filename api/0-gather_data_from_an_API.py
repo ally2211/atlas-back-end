@@ -27,12 +27,12 @@ if __name__ == '__main__':
             if task['completed'] is True:
                 NUMBER_OF_DONE_TASKS += 1
                 TASK_TITLE = task['title']
-                TASKS_LIST.append('\t ' + TASK_TITLE + '\n')
+                TASKS_LIST.append('\t ' + TASK_TITLE)
         employeetasks = ("Employee " + EMPLOYEE_NAME +
                          " is done with tasks(" + str(NUMBER_OF_DONE_TASKS) +
-                         "/" + str(TOTAL_NUMBER_OF_TASKS) + "):\n")
+                         "/" + str(TOTAL_NUMBER_OF_TASKS) + "):")
         for task in TASKS_LIST:
-            employeetasks += task
+            employeetasks += "\n" + task
         print(employeetasks)
     else:
         print('Employee not found')
