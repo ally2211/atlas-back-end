@@ -5,7 +5,7 @@ Import the Flask class from the flask module
 import requests
 import sys
 
-if __name__== '__main__':
+if __name__ == '__main__':
 
     base_url = "https://jsonplaceholder.typicode.com"
     user_ext = "/users/{}".format(sys.argv[1])
@@ -13,11 +13,11 @@ if __name__== '__main__':
 
     user_response = requests.get(base_url + user_ext)
     user = user_response.json()
-    
+
     if user:
         tasks_response = requests.get(base_url + user_ext + todo_ext)
         tasks = tasks_response.json()
-        
+
         EMPLOYEE_NAME = user['name']
         TOTAL_NUMBER_OF_TASKS = 0
         NUMBER_OF_DONE_TASKS = 0
@@ -33,6 +33,6 @@ if __name__== '__main__':
                          "/" + str(TOTAL_NUMBER_OF_TASKS) + "):\n")
         for task in TASKS_LIST:
             employeetasks += task
-        print (employeetasks)
+        print(employeetasks)
     else:
         print('Employee not found')
