@@ -30,8 +30,7 @@ if __name__ == '__main__':
                               str(TASK_COMPLETED_STATUS) +
                               "," + TASK_TITLE])
     csvfilename = str(USER_ID) + '.csv'
-    with open(csvfilename, 'w', newline='') as file:
+    with open(csvfilename, 'w+', newline='') as file:
         writer = csv.writer(file)
         writer.writerows(employeetasks)
-        # Set the file to be read-only
-        os.chmod(csvfilename, 0o444)
+    print(employeetasks)
