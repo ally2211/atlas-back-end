@@ -26,9 +26,10 @@ if __name__ == '__main__':
     for task in tasks:
         TASK_COMPLETED_STATUS = task['completed']
         TASK_TITLE = task['title']
-        employeetasks.append([str(USER_ID) + "," + USERNAME + "," +
-                              str(TASK_COMPLETED_STATUS) +
-                              "," + TASK_TITLE])
+        employeetask = [str(USER_ID), USERNAME, str(TASK_COMPLETED_STATUS), TASK_TITLE]
+        employeetasks.append(employeetask)
+        # Print each task to stdout
+        print(','.join(employeetask))
     csvfilename = str(USER_ID) + '.csv'
     with open(csvfilename, 'w+', newline='') as file:
         writer = csv.writer(file)
