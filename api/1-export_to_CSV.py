@@ -32,7 +32,8 @@ if __name__ == '__main__':
             TASK_COMPLETED_STATUS = task['completed']
             TASK_TITLE = task['title']
             employeetask = ["'" + str(USER_ID) + "'", "'" + USERNAME + "'",
-                            "'" + str(TASK_COMPLETED_STATUS) + "'", "'" + TASK_TITLE + "'"]
+                            "'" + str(TASK_COMPLETED_STATUS) + "'",
+                            "'" + TASK_TITLE + "'"]
             employeetasks.append(employeetask)
             if not sys.stdout.isatty():
                 # Print each task to stdout
