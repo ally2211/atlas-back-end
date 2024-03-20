@@ -24,7 +24,7 @@ if __name__ == '__main__':
     tasks = tasks_response.json()
 
     USER_ID = user['id']
-    USERNAME = user['name']
+    USERNAME = user['username']
     employeetasks = []
 
     if user:
