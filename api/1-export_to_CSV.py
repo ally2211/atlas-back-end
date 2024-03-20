@@ -9,6 +9,10 @@ import sys
 
 if __name__ == '__main__':
 
+    # Check if the user ID argument is provided
+    if len(sys.argv) < 2:
+        sys.exit(1)  # Exit the script with an error code
+
     base_url = "https://jsonplaceholder.typicode.com"
     user_ext = "/users/{}".format(sys.argv[1])
     todo_ext = "/todos"
