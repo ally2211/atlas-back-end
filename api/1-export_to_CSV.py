@@ -35,4 +35,3 @@ if __name__ == '__main__':
     with open(csvfilename, 'w+', newline='') as file:
         writer = csv.writer(file)
         writer.writerows(employeetasks)
-    print(employeetasks)
