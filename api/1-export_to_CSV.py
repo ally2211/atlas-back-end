@@ -22,11 +22,13 @@ if __name__ == '__main__':
         USER_ID = user['id']
         USERNAME = user['name']
         employeetasks = []
-        
+
         for task in tasks:
-                TASK_COMPLETED_STATUS = task['completed']
-                TASK_TITLE = task['title']
-                employeetasks.append([str(USER_ID) + "," + USERNAME + "," + str(TASK_COMPLETED_STATUS) + "," + TASK_TITLE])
+            TASK_COMPLETED_STATUS = task['completed']
+            TASK_TITLE = task['title']
+            employeetasks.append([str(USER_ID) + "," + USERNAME + "," +
+                                  str(TASK_COMPLETED_STATUS) +
+                                  "," + TASK_TITLE])
         csvfilename = str(USER_ID) + '.csv'
         with open(csvfilename, 'w', newline='') as file:
             writer = csv.writer(file)
