@@ -3,6 +3,7 @@
 Import the Flask class from the flask module
 """
 import csv
+import os
 import requests
 import sys
 
@@ -32,3 +33,5 @@ if __name__ == '__main__':
     with open(csvfilename, 'w', newline='') as file:
         writer = csv.writer(file)
         writer.writerows(employeetasks)
+        # Set the file to be read-only
+        os.chmod(csvfilename, 0o444)
