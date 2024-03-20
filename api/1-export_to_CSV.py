@@ -31,10 +31,12 @@ if __name__ == '__main__':
         for task in tasks:
             TASK_COMPLETED_STATUS = task['completed']
             TASK_TITLE = task['title']
-            employeetask = ["'" + str(USER_ID) + "'", "'" + USERNAME + "'",
-                            "'" + str(TASK_COMPLETED_STATUS) + "'",
-                            "'" + TASK_TITLE + "'"]
-            employeetasks.append(employeetask)
+            
+            employeetask = ['"' + str(USER_ID) + '"', '"' + USERNAME + '"',
+                '"' + str(TASK_COMPLETED_STATUS) + '"', '"' + TASK_TITLE + '"']
+            employeetaskfile = [str(USER_ID), USERNAME,
+                                str(TASK_COMPLETED_STATUS), TASK_TITLE]
+            employeetasks.append(employeetaskfile)
             if not sys.stdout.isatty():
                 # Print each task to stdout
                 print(','.join(employeetask))
