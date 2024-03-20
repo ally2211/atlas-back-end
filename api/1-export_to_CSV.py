@@ -34,8 +34,9 @@ if __name__ == '__main__':
             employeetask = [str(USER_ID), USERNAME,
                             str(TASK_COMPLETED_STATUS), TASK_TITLE]
             employeetasks.append(employeetask)
-            # Print each task to stdout
-            print(','.join(employeetask))
+            if not sys.stdout.isatty():
+                # Print each task to stdout
+                print(','.join(employeetask))
         csvfilename = str(USER_ID) + '.csv'
         with open(csvfilename, 'w+', newline='') as file:
             writer = csv.writer(file)
