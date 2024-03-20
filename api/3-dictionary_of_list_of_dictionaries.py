@@ -16,14 +16,12 @@ if __name__ == '__main__':
     users = user_response.json()
     tasks_response = requests.get(base_url + todo_ext)
     tasks = tasks_response.json()
-
     USER_DICT = {}
-    USERS = []
+
     for user in users:
         TASKS = []
         USER_ID = user['id']
         USERNAME = user['username']
-
         for task in tasks:
             TASK_COMPLETED_STATUS = task['completed']
             TASK_TITLE = task['title']
@@ -32,11 +30,7 @@ if __name__ == '__main__':
                 'task': TASK_TITLE,
                 'completed': TASK_COMPLETED_STATUS
             })
-
-        # use USER_ID as key, mapping to the TASKS_LIST
-        USER_DICT = {
-            USER_ID: TASKS
-        }
-        USERS.append(USER_DICT)
+        # After populating TASKS for the user, assign it to USER_DICT
+        USER_DICT[USER_ID] = TASKS
     with open("todo_all_employees.json", "w") as outfile:
-        json.dump(USERS, outfile)
+        json.dump(USER_DICT, outfile)
