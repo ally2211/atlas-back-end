@@ -33,8 +33,8 @@ if __name__ == '__main__':
             TASK_TITLE = task['title']
 
             employeetask = ['"' + str(USER_ID) + '"', '"' + USERNAME + '"',
-                '"' + str(TASK_COMPLETED_STATUS) + '"',
-                '"' + TASK_TITLE + '"']
+                            '"' + str(TASK_COMPLETED_STATUS) + '"',
+                            '"' + TASK_TITLE + '"']
             employeetaskfile = [str(USER_ID), USERNAME,
                                 str(TASK_COMPLETED_STATUS), TASK_TITLE]
             employeetasks.append(employeetaskfile)
