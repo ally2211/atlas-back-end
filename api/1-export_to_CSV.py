@@ -15,23 +15,20 @@ if __name__ == '__main__':
     user_response = requests.get(base_url + user_ext)
     user = user_response.json()
 
-    if user:
-        tasks_response = requests.get(base_url + user_ext + todo_ext)
-        tasks = tasks_response.json()
+    tasks_response = requests.get(base_url + user_ext + todo_ext)
+    tasks = tasks_response.json()
 
-        USER_ID = user['id']
-        USERNAME = user['name']
-        employeetasks = []
+    USER_ID = user['id']
+    USERNAME = user['name']
+    employeetasks = []
 
-        for task in tasks:
-            TASK_COMPLETED_STATUS = task['completed']
-            TASK_TITLE = task['title']
-            employeetasks.append([str(USER_ID) + "," + USERNAME + "," +
-                                  str(TASK_COMPLETED_STATUS) +
-                                  "," + TASK_TITLE])
-        csvfilename = str(USER_ID) + '.csv'
-        with open(csvfilename, 'w', newline='') as file:
-            writer = csv.writer(file)
-            writer.writerows(employeetasks)
-    else:
-        print('Employee not found')
+    for task in tasks:
+        TASK_COMPLETED_STATUS = task['completed']
+        TASK_TITLE = task['title']
+        employeetasks.append([str(USER_ID) + "," + USERNAME + "," +
+                              str(TASK_COMPLETED_STATUS) +
+                              "," + TASK_TITLE])
+    csvfilename = str(USER_ID) + '.csv'
+    with open(csvfilename, 'w', newline='') as file:
+        writer = csv.writer(file)
+        writer.writerows(employeetasks)
