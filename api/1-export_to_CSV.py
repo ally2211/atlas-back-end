@@ -27,7 +27,6 @@ if __name__ == '__main__':
                 TASK_COMPLETED_STATUS = task['completed']
                 TASK_TITLE = task['title']
                 employeetasks.append([str(USER_ID) + "," + USERNAME + "," + str(TASK_COMPLETED_STATUS) + "," + TASK_TITLE])
-        #print(employeetasks)
         csvfilename = str(USER_ID) + '.csv'
         with open(csvfilename, 'w', newline='') as file:
             writer = csv.writer(file)
